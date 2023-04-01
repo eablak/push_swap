@@ -1,8 +1,6 @@
 NAME = push_swap.a
 
-SOURCES = push_swap.c push_swap_utils.c small_sort.c functions.c big_sort_part2.c \
-			big_sort_part3.c big_sort_part4.c functions_part2.c big_sort_onehalf.c big_sort.c \
-			small_sort_part2.c big_sort_twohalf.c big_sort_last.c
+SOURCES = *.c\
 
 OBJECTS = $(SOURCES:.c=.o)
 
