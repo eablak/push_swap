@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_struct	*ft_cr_struct(int i)
+t_struct	*create_struct(int i)
 {
 	t_struct	*new_struct;
 
@@ -55,23 +55,23 @@ void	ft_free(t_struct **strct)
 
 void	ft_struct(int *arr, int size)
 {
-	t_struct	*first_struct;
-	t_struct	*a_struct;
-	t_struct	*bas;
+	t_struct	*main_struct;
+	t_struct	*created_struct;
+	t_struct	*copy_struct;
 	int			i;
 
-	first_struct = malloc(sizeof(t_struct));
-	if (!first_struct)
+	main_struct = malloc(sizeof(t_struct));
+	if (!main_struct)
 		return ;
-	first_struct->data = arr[0];
-	first_struct->next = NULL;
-	bas = first_struct;
+	main_struct->data = arr[0];
+	main_struct->next = NULL;
+	copy_struct = main_struct;
 	i = 1;
 	while (i < size)
 	{
-		a_struct = ft_cr_struct(arr[i]);
-		ft_struct_addback(&first_struct, a_struct);
+		created_struct = create_struct(arr[i]);
+		ft_struct_addback(&main_struct, created_struct);
 		i++;
 	}
-	ft_forsize(size, &bas);
+	process_by_size(size, &copy_struct);
 }

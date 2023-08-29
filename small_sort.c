@@ -65,7 +65,7 @@ void	ft_forthree2(t_struct **a)
 	(*a) = begin;
 }
 
-void	ft_forsize(int size, t_struct **my_struct)
+void	process_by_size(int size, t_struct **my_struct)
 {
 	t_struct	*b;
 

@@ -60,14 +60,14 @@ typedef struct s_holder
 }					t_holder;
 
 void				ft_struct(int *arr, int size);
-t_struct			*ft_cr_struct(int i);
+t_struct			*create_struct(int i);
 void				ra(t_struct **a);
 void				rb(t_struct **b);
 void				rra(t_struct **a);
 void				rrb(t_struct **b);
 t_struct			*sa(t_struct **a);
 
-void				ft_forsize(int size, t_struct **my_struct);
+void				process_by_size(int size, t_struct **my_struct);
 void				ft_fortwo(t_struct **a);
 void				ft_forthree(t_struct **a, int flag);
 void				ft_forthree2(t_struct **a);

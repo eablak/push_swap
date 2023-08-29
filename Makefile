@@ -5,7 +5,7 @@ SOURCES = *.c\
 OBJECTS = $(SOURCES:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = #-Wall -Wextra -Werror -g
 libft = ./libft/libft.a
 
 all: $(NAME)

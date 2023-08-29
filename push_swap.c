@@ -13,7 +13,7 @@
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-int	ft_get_size(char **av)
+int	get_size(char **av)
 {
 	int		i;
 	int		size;
@@ -38,7 +38,7 @@ int	ft_get_size(char **av)
 	return (size);
 }
 
-char	*ft_unify(char **av)
+char	*unify(char **av)
 {
 	int		i;
 	char	*all_array;
@@ -65,7 +65,7 @@ char	*ft_unify(char **av)
 	return (all_array);
 }
 
-int	*ft_convert_digit(char *str, int size)
+int	*convert_digit(char *str, int size)
 {
 	int		i;
 	char	**array;
@@ -91,7 +91,7 @@ int	*ft_convert_digit(char *str, int size)
 	return (int_array);
 }
 
-void	ft_checksame(int *arr, int size)
+void	check_same(int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -113,6 +113,43 @@ void	ft_checksame(int *arr, int size)
 	}
 }
 
+void check_nan(char *all_arguments){
+	int i;
+
+	i =0;
+	while(all_arguments[i]){
+		if (all_arguments[i] == '-' && (all_arguments[i+1] == '\0' || all_arguments[i+1] == ' '))
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
+		if (!(all_arguments[i] >= 48 && all_arguments[i] <= 57) && all_arguments[i] != '-' && all_arguments[i] != ' '){
+			write(2, "Error\n", 6);
+			free(all_arguments); //checkk!!!!
+			// system("leaks push_swap");
+			exit(1);
+		}
+		i++;
+	}
+}
+
+void check_sorted(int *arr, int size){
+	int i = 0;
+	int j = 0;
+	while (i < size)
+	{
+		j = i;
+		int nbr = arr[i];
+		while(j < size){
+			if (nbr > arr[j])
+				return ;
+			j++;
+		}
+		i++;
+	}
+	exit(1);
+}
+
 int	main(int ac, char **av)
 {
 	int		size;
@@ -120,12 +157,14 @@ int	main(int ac, char **av)
 	int		*arr;
 
 	(void)ac;
-	size = ft_get_size(av) - 1;
+	size = get_size(av) - 1;
 	if (size == 0)
 		return (1);
-	all_arguments = ft_unify(av);
-	arr = ft_convert_digit(all_arguments, size);
-	ft_checksame(arr, size);
+	all_arguments = unify(av);
+	check_nan(all_arguments);
+	arr = convert_digit(all_arguments, size);
+	check_sorted(arr, size);
+	check_same(arr, size);
 	ft_struct(arr, size);
 	free(arr);
 }
