@@ -100,7 +100,7 @@ void				make_up_a(t_holder *holder);
 void				ft_make_a(t_holder *holder, int count);
 void				locate_inter(t_holder *holder, int *arr);
 int					is_descending(t_struct **a, int size);
-int					ft_correct_count(t_holder *holder, int *arr, int data);
+int					correct_count(t_holder *holder, int *arr, int data);
 void				ft_free(t_struct **strct);
 void				rrb_utils(t_struct_rra *s_rrb, t_struct **b);
 void				find_sorted_max(t_strct_bigsort *big_strct);

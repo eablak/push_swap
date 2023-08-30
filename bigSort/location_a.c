@@ -110,7 +110,7 @@ int	location_a(t_holder *holder, int *arr)
 	else if (check_max(holder) == 1)
 		i = up_min_a(holder);
 	else
-		i = ft_correct_count(holder, arr, data);
+		i = correct_count(holder, arr, data);
 	holder->a = keep_a;
 	if (i > holder->size_a / 2)
 		i = holder->size_a - i;

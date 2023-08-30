@@ -65,7 +65,7 @@ SRCS        :=      main.c \
                           bigSort/big_sort7.c \
                           bigSort/big_sort.c \
                           bigSort/big_sort5.c \
-                          bigSort/big_sort4.c \
+                          bigSort/location_a.c \
                           quarted_quintette.c \
                           start_sorting.c \
                           bigSort/sorted_part_process.c \

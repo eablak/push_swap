@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	ft_correct_count2(t_holder *holder, int *arr, int index, t_struct *keep_a)
+int	correct_utils(t_holder *holder, int *arr, int index, t_struct *keep_a)
 {
 	int	i;
 	int	flag;
@@ -41,7 +41,7 @@ int	ft_correct_count2(t_holder *holder, int *arr, int index, t_struct *keep_a)
 	return (i);
 }
 
-int	ft_correct_count(t_holder *holder, int *arr, int data)
+int	correct_count(t_holder *holder, int *arr, int data)
 {
 	t_struct	*keep_a;
 	int			index;
@@ -51,7 +51,7 @@ int	ft_correct_count(t_holder *holder, int *arr, int data)
 	keep_a = holder->a;
 	index = 0;
 	index = find_in_arr(arr, data, holder) + 1;
-	i = ft_correct_count2(holder, arr, index, keep_a);
+	i = correct_utils(holder, arr, index, keep_a);
 	holder->a = keep_a;
 	return (i);
 }
@@ -85,7 +85,7 @@ int	up_b(t_holder *holder, t_struct *use_b, int data)
 	return (size);
 }
 
-void	find_min_step2(t_holder *holder, int *arr, t_struct *second_b)
+void	find_min_step(t_holder *holder, int *arr, t_struct *second_b)
 {
 	int	min_len;
 	int	step_len;
@@ -119,7 +119,7 @@ void	replacement(t_holder *holder, int *arr)
 	while (holder->size_b)
 	{
 		second_b = holder->b;
-		find_min_step2(holder, arr, second_b);
+		find_min_step(holder, arr, second_b);
 	}
 	make_up_a(holder);
 	ft_free(&(holder->a));
