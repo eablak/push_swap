@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	locate_inter2(t_holder *holder, int b_index, t_struct *keep_a, int *arr)
 {

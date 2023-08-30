@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_fortwo(t_struct **a)
+void	binary_sorting(t_struct **a)
 {
 	t_struct	*begin;
 
@@ -22,7 +22,7 @@ void	ft_fortwo(t_struct **a)
 	ft_free(a);
 }
 
-void	ft_forthree(t_struct **a, int flag)
+void	triple_sorting(t_struct **a, int flag)
 {
 	t_struct	*begin;
 
@@ -42,12 +42,12 @@ void	ft_forthree(t_struct **a, int flag)
 		&& begin->next->data > begin->next->next->data)
 		rra(&begin);
 	(*a) = begin;
-	ft_forthree2(a);
+	triple_utils(a);
 	if (flag == 1)
 		ft_free(a);
 }
 
-void	ft_forthree2(t_struct **a)
+void	triple_utils(t_struct **a)
 {
 	t_struct	*begin;
 
@@ -73,12 +73,12 @@ void	process_by_size(int size, t_struct **my_struct)
 	if (size == 1)
 		exit(1);
 	else if (size == 2)
-		ft_fortwo(my_struct);
+		binary_sorting(my_struct);
 	else if (size == 3)
-		ft_forthree(my_struct, 1);
+		triple_sorting(my_struct, 1);
 	else if (size == 4 || size == 5)
-		ft_fourfive(my_struct, b, size);
+		quarted_quintette(my_struct, b, size);
 	else if (size > 5)
-		ft_forall(my_struct, b, size);
+		big_sort(my_struct, b, size);
 	free(b);
 }

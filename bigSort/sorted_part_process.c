@@ -10,61 +10,61 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void	find_sort_2(t_strct_bigsort *st_b_s)
+void	find_sorted_max(t_strct_bigsort *big_strct)
 {
-	st_b_s->temp = st_b_s->begin;
-	while (st_b_s->begin->next != NULL
-		&& st_b_s->begin->data < st_b_s->begin->next->data)
+	big_strct->temp = big_strct->begin;
+	while (big_strct->begin->next != NULL
+		&& big_strct->begin->data < big_strct->begin->next->data)
 	{
-		st_b_s->len++;
-		if (st_b_s->begin->next != NULL)
-			st_b_s->begin = st_b_s->begin->next;
+		big_strct->len++;
+		if (big_strct->begin->next != NULL)
+			big_strct->begin = big_strct->begin->next;
 	}
-	st_b_s->temp2 = st_b_s->begin;
-	if (st_b_s->len > st_b_s->real_len)
+	big_strct->temp2 = big_strct->begin;
+	if (big_strct->len > big_strct->real_len)
 	{
-		st_b_s->real_len = st_b_s->len;
-		st_b_s->start = st_b_s->temp;
-		st_b_s->end = st_b_s->temp2;
+		big_strct->real_len = big_strct->len;
+		big_strct->start = big_strct->temp;
+		big_strct->end = big_strct->temp2;
 	}
-	st_b_s->len = 0;
+	big_strct->len = 0;
 }
 
-t_struct2	find_sort(t_struct **a)
+sorted_struct	find_sorted(t_struct **a)
 {
-	t_strct_bigsort	*st_b_s;
-	t_struct2		sortedd;
+	t_strct_bigsort	*big_strct;
+	sorted_struct		sortedd;
 
-	st_b_s = malloc(sizeof(t_strct_bigsort));
-	st_b_s->begin = (*a);
-	st_b_s->len = 0;
-	st_b_s->real_len = 0;
-	while (st_b_s->begin->next)
+	big_strct = malloc(sizeof(t_strct_bigsort));
+	big_strct->begin = (*a);
+	big_strct->len = 0;
+	big_strct->real_len = 0;
+	while (big_strct->begin->next)
 	{
-		if (st_b_s->begin->data < st_b_s->begin->next->data)
-			find_sort_2(st_b_s);
+		if (big_strct->begin->data < big_strct->begin->next->data)
+			find_sorted_max(big_strct);
 		else
-			st_b_s->begin = st_b_s->begin->next;
+			big_strct->begin = big_strct->begin->next;
 	}
-	st_b_s->sorted.first = st_b_s->start->data;
-	st_b_s->sorted.len = st_b_s->real_len + 1;
-	sortedd = st_b_s->sorted;
-	free(st_b_s);
+	big_strct->sorted.first = big_strct->start->data;
+	big_strct->sorted.len = big_strct->real_len + 1;
+	sortedd = big_strct->sorted;
+	free(big_strct);
 	return (sortedd);
 }
 
-void	make_b_end_null(t_struct *b, int for_b)
+void	end_valueB(t_struct *b, int len_b)
 {
 	t_struct	*keep_b;
 	int			i;
 
 	i = 1;
 	keep_b = b;
-	while (i < for_b)
+	while (i < len_b)
 	{
 		b = b->next;
 		i++;
@@ -73,39 +73,36 @@ void	make_b_end_null(t_struct *b, int for_b)
 	b = keep_b;
 }
 
-void	sorted_stay_a2(t_holder *holder, int i, int len_a)
+void	sorted_stayA(t_holder *holder, int i)
 {
 	while (i > 0)
 	{
 		ra(&(holder->a));
 		i--;
-		len_a++;
 	}
 }
 
-void	sorted_stay_a(t_holder *holder, t_struct2 sorted, int size)
+void	placing_values(t_holder *holder, sorted_struct sorted, int size)
 {
 	int			i;
-	int			for_b;
+	int			len_b;
 	t_struct	*keep_b;
-	int			len_a;
 
 	i = sorted.len;
 	holder->size_a = size;
 	holder->size_b = 0;
-	for_b = 0;
+	len_b = 0;
 	keep_b = holder->b;
-	len_a = 0;
 	while (size - sorted.len + 1 > 0)
 	{
 		if (holder->a->data == sorted.first)
-			sorted_stay_a2(holder, i, len_a);
+			sorted_stayA(holder, i);
 		else
 		{
 			pb(holder);
-			for_b++;
+			len_b++;
 		}
 		size--;
 	}
-	make_b_end_null(holder->b, for_b);
+	end_valueB(holder->b, len_b);
 }

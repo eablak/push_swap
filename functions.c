@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	rra_2(t_struct_rra *s_rra, t_struct **a)
+void	rra_utils(t_struct_rra *s_rra, t_struct **a)
 {
 	s_rra->x->next = s_rra->dont_lose_begin;
 	s_rra->last_free = s_rra->x;
@@ -48,10 +48,10 @@ void	rra(t_struct **a)
 	s_rra->x->data = s_rra->begin->data;
 	s_rra->x->next = NULL;
 	free(s_rra->begin);
-	rra_2(s_rra, a);
+	rra_utils(s_rra, a);
 }
 
-void	rrb_2(t_struct_rra *s_rrb, t_struct **b)
+void	rrb_utils(t_struct_rra *s_rrb, t_struct **b)
 {
 	s_rrb->x->next = s_rrb->dont_lose_begin;
 	s_rrb->last_free = s_rrb->x;
@@ -86,7 +86,7 @@ void	rrb(t_struct **b)
 	s_rrb->x->data = s_rrb->begin->data;
 	s_rrb->x->next = NULL;
 	free(s_rrb->begin);
-	rrb_2(s_rrb, b);
+	rrb_utils(s_rrb, b);
 }
 
 int	*bubble_sort(int *numeros, int size)

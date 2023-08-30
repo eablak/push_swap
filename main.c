@@ -125,8 +125,7 @@ void check_nan(char *all_arguments){
 		}
 		if (!(all_arguments[i] >= 48 && all_arguments[i] <= 57) && all_arguments[i] != '-' && all_arguments[i] != ' '){
 			write(2, "Error\n", 6);
-			free(all_arguments); //checkk!!!!
-			// system("leaks push_swap");
+			free(all_arguments);
 			exit(1);
 		}
 		i++;
@@ -165,6 +164,6 @@ int	main(int ac, char **av)
 	arr = convert_digit(all_arguments, size);
 	check_sorted(arr, size);
 	check_same(arr, size);
-	ft_struct(arr, size);
+	build_struct(arr, size);
 	free(arr);
 }

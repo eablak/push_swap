@@ -62,7 +62,7 @@ void	find_min_data(t_holder *holder)
 	send_b(holder, i);
 }
 
-void	ft_fourfive(t_struct **a, t_struct *b, int size)
+void	quarted_quintette(t_struct **a, t_struct *b, int size)
 {
 	t_holder	*holder;
 	t_struct	*keep_a;
@@ -79,7 +79,7 @@ void	ft_fourfive(t_struct **a, t_struct *b, int size)
 		find_min_data(holder);
 		i++;
 	}
-	ft_forthree(&(holder->a), 0);
+	triple_sorting(&(holder->a), 0);
 	while (i > 0)
 	{
 		pa(holder);

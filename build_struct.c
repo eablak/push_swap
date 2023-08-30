@@ -24,7 +24,7 @@ t_struct	*create_struct(int i)
 	return (new_struct);
 }
 
-void	ft_struct_addback(t_struct **strct, t_struct *new)
+void	struct_addback(t_struct **strct, t_struct *new)
 {
 	if (*strct == NULL || new == NULL)
 	{
@@ -53,7 +53,7 @@ void	ft_free(t_struct **strct)
 	}
 }
 
-void	ft_struct(int *arr, int size)
+void	build_struct(int *arr, int size)
 {
 	t_struct	*main_struct;
 	t_struct	*created_struct;
@@ -70,7 +70,7 @@ void	ft_struct(int *arr, int size)
 	while (i < size)
 	{
 		created_struct = create_struct(arr[i]);
-		ft_struct_addback(&main_struct, created_struct);
+		struct_addback(&main_struct, created_struct);
 		i++;
 	}
 	process_by_size(size, &copy_struct);

@@ -23,11 +23,11 @@ typedef struct t_struct
 	struct t_struct	*next;
 }					t_struct;
 
-typedef struct t_struct2
+typedef struct sorted_struct
 {
 	int				first;
 	int				len;
-}					t_struct2;
+}					sorted_struct;
 
 typedef struct t_struct3
 {
@@ -42,7 +42,7 @@ typedef struct t_struct3
 typedef struct t_struct4
 {
 	t_struct		*begin;
-	t_struct2		sorted;
+	sorted_struct		sorted;
 	t_struct		*start;
 	t_struct		*end;
 	t_struct		*temp;
@@ -59,7 +59,7 @@ typedef struct s_holder
 	int				size_b;
 }					t_holder;
 
-void				ft_struct(int *arr, int size);
+void				build_struct(int *arr, int size);
 t_struct			*create_struct(int i);
 void				ra(t_struct **a);
 void				rb(t_struct **b);
@@ -68,21 +68,21 @@ void				rrb(t_struct **b);
 t_struct			*sa(t_struct **a);
 
 void				process_by_size(int size, t_struct **my_struct);
-void				ft_fortwo(t_struct **a);
-void				ft_forthree(t_struct **a, int flag);
-void				ft_forthree2(t_struct **a);
-void				ft_fourfive(t_struct **a, t_struct *b, int size);
-void				ft_forall(t_struct **a, t_struct *b, int size);
+void				binary_sorting(t_struct **a);
+void				triple_sorting(t_struct **a, int flag);
+void				triple_utils(t_struct **a);
+void				quarted_quintette(t_struct **a, t_struct *b, int size);
+void				big_sort(t_struct **a, t_struct *b, int size);
 void				find_min_data(t_holder *holder);
 int					*bubble_sort(int *numeros, int size);
-void				sorted_stay_a(t_holder *holder, t_struct2 sorted, int size);
+void				placing_values(t_holder *holder, sorted_struct sorted, int size);
 
 void				pa(t_holder *holder);
 void				pb(t_holder *holder);
 int					*cr_copy_arr(t_struct **a, int size);
 
 int					up_b(t_holder *holder, t_struct *use_b, int data);
-void				find_min_step(t_holder *holder, int *arr);
+void				replacement(t_holder *holder, int *arr);
 int					location_a(t_holder *holder, int *arr);
 int					ft_check_max(t_holder *holder, int data);
 int					ft_check_inter(t_holder *holder, int data, int *arr);
@@ -102,10 +102,10 @@ void				locate_inter(t_holder *holder, int *arr);
 int					is_descending(t_struct **a, int size);
 int					ft_correct_count(t_holder *holder, int *arr, int data);
 void				ft_free(t_struct **strct);
-void				rrb_2(t_struct_rra *s_rrb, t_struct **b);
-void				find_sort_2(t_strct_bigsort *st_b_s);
-void				sorted_stay_a2(t_holder *holder, int i, int len_a);
-t_struct2			find_sort(t_struct **a);
+void				rrb_utils(t_struct_rra *s_rrb, t_struct **b);
+void				find_sorted_max(t_strct_bigsort *big_strct);
+void				sorted_stayA(t_holder *holder, int i);
+sorted_struct			find_sorted(t_struct **a);
 void				ft_finish(t_holder *holder, int count);
 void				ft_array_control(char *all_array);
 #endif

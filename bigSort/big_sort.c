@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	*cr_copy_arr(t_struct **a, int size)
 {
@@ -60,11 +60,11 @@ int	is_descending(t_struct **a, int size)
 	return (flag);
 }
 
-void	ft_forall(t_struct **a, t_struct *b, int size)
+void	big_sort(t_struct **a, t_struct *b, int size)
 {
 	t_struct	*begin;
 	t_struct	*keep_begin;
-	t_struct2	sorted;
+	sorted_struct	sorted;
 	t_holder	*holder;
 	int			*arr;
 
@@ -76,9 +76,9 @@ void	ft_forall(t_struct **a, t_struct *b, int size)
 	if (is_descending(&begin, size) != 1)
 		ra(&begin);
 	holder->a = begin;
-	sorted = find_sort(&begin);
+	sorted = find_sorted(&begin);
 	arr = cr_copy_arr(&begin, size);
-	sorted_stay_a(holder, sorted, size);
-	find_min_step(holder, arr);
+	placing_values(holder, sorted, size);
+	replacement(holder, arr);
 	free(arr);
 }

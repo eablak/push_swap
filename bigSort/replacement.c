@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_correct_count2(t_holder *holder, int *arr, int index, t_struct *keep_a)
 {
@@ -110,7 +110,7 @@ void	find_min_step2(t_holder *holder, int *arr, t_struct *second_b)
 	pa(holder);
 }
 
-void	find_min_step(t_holder *holder, int *arr)
+void	replacement(t_holder *holder, int *arr)
 {
 	t_struct	*keep_b;
 	t_struct	*second_b;
