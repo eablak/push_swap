@@ -83,22 +83,22 @@ int					*cr_copy_arr(t_struct **a, int size);
 
 int					up_b(t_holder *holder, t_struct *use_b, int data);
 void				replacement(t_holder *holder, int *arr);
-int					location_a(t_holder *holder, int *arr);
+int					locationA(t_holder *holder, int *arr);
 int					ft_check_max(t_holder *holder, int data);
 int					ft_check_inter(t_holder *holder, int data, int *arr);
-void				ft_run_as(int data, t_holder *holder);
-void				make_numb_up_b(t_holder *holder, int data);
+void				run_as(int data, t_holder *holder);
+void				moveUpB(t_holder *holder, int data);
 t_struct			*b_with_rb(t_struct *b, int size);
 t_struct			*b_with_rrb(t_struct *b, int size);
-void				locate_a(t_holder *holder, int *arr);
+void				locateA(t_holder *holder, int *arr);
 void				location_inter(t_holder *holder);
 int					find_in_arr(int *arr, int data, t_holder *holder);
 int					check_max(t_holder *holder);
 int					check_min(t_holder *holder);
 int					up_min_a(t_holder *holder);
-void				make_up_a(t_holder *holder);
+void				moveUpA(t_holder *holder);
 void				ft_make_a(t_holder *holder, int count);
-void				locate_inter(t_holder *holder, int *arr);
+void				locateInter(t_holder *holder, int *arr);
 int					is_descending(t_struct **a, int size);
 int					correct_count(t_holder *holder, int *arr, int data);
 void				ft_free(t_struct **strct);
@@ -108,4 +108,6 @@ void				sorted_stayA(t_holder *holder, int i);
 sorted_struct			find_sorted(t_struct **a);
 void				ft_finish(t_holder *holder, int count);
 void				ft_array_control(char *all_array);
+
+void print_result(t_struct *holder_a);
 #endif

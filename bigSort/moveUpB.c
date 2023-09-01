@@ -38,7 +38,7 @@ t_struct	*b_with_rrb(t_struct *b, int size)
 	return (b);
 }
 
-int	make_numb_up_b2(t_holder *holder, int data, int *size)
+int	moveUpB_utils(t_holder *holder, int data, int *size)
 {
 	t_struct	*keep_b;
 	int			rb;
@@ -65,7 +65,7 @@ int	make_numb_up_b2(t_holder *holder, int data, int *size)
 	return (rb);
 }
 
-void	make_numb_up_b(t_holder *holder, int data)
+void	moveUpB(t_holder *holder, int data)
 {
 	t_struct	*keep_a;
 	int			size;
@@ -73,19 +73,19 @@ void	make_numb_up_b(t_holder *holder, int data)
 
 	keep_a = holder->a;
 	size = 0;
-	rb = make_numb_up_b2(holder, data, &size);
+	rb = moveUpB_utils(holder, data, &size);
 	if (rb == 1)
 		holder->b = b_with_rb(holder->b, size);
 	else if (rb == 2)
 		holder->b = b_with_rrb(holder->b, size);
 }
 
-void	ft_run_as(int data, t_holder *holder)
+void	run_as(int data, t_holder *holder)
 {
 	t_struct	*keep_a;
 	t_struct	*keep_b;
 
 	keep_a = holder->a;
 	keep_b = holder->b;
-	make_numb_up_b(holder, data);
+	moveUpB(holder, data);
 }

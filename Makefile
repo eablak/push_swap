@@ -18,7 +18,7 @@ SRCS        :=      main.c \
                           build_struct.c \
                           functions.c \
                           functions_utils.c \
-                          bigSort/big_sort6.c \
+                          bigSort/locateA.c \
                           libft/ft_tolower.c \
                           libft/ft_substr.c \
                           libft/ft_toupper.c \
@@ -62,13 +62,13 @@ SRCS        :=      main.c \
                           libft/ft_bzero.c \
                           libft/ft_lstdelone.c \
                           libft/ft_itoa.c \
-                          bigSort/big_sort7.c \
+                          bigSort/locateInter.c \
                           bigSort/big_sort.c \
-                          bigSort/big_sort5.c \
-                          bigSort/location_a.c \
+                          bigSort/moveUpB.c \
+                          bigSort/locationA.c \
                           quarted_quintette.c \
                           start_sorting.c \
-                          bigSort/sorted_part_process.c \
+                          bigSort/sortedPart_process.c \
                           bigSort/replacement.c \
                           
 OBJS        := $(SRCS:.c=.o)

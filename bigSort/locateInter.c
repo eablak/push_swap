@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	locate_inter2(t_holder *holder, int b_index, t_struct *keep_a, int *arr)
+int	locateInter_utils(t_holder *holder, int b_index, t_struct *keep_a, int *arr)
 {
 	int	count;
 	int	out;
@@ -40,7 +40,7 @@ int	locate_inter2(t_holder *holder, int b_index, t_struct *keep_a, int *arr)
 	return (count);
 }
 
-void	locate_inter(t_holder *holder, int *arr)
+void	locateInter(t_holder *holder, int *arr)
 {
 	int			data;
 	int			b_index;
@@ -57,7 +57,7 @@ void	locate_inter(t_holder *holder, int *arr)
 		b_index++;
 	}
 	b_index++;
-	count = locate_inter2(holder, b_index, keep_a, arr);
+	count = locateInter_utils(holder, b_index, keep_a, arr);
 	holder->a = keep_a;
 	ft_finish(holder, count);
 }

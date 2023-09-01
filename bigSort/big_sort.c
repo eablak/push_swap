@@ -60,6 +60,13 @@ int	is_descending(t_struct **a, int size)
 	return (flag);
 }
 
+void print_result(t_struct *holder_a){
+	while(holder_a != NULL){
+		printf("%d ",holder_a->data);
+		holder_a = holder_a->next;
+	}
+}
+
 void	big_sort(t_struct **a, t_struct *b, int size)
 {
 	t_struct	*begin;

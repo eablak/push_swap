@@ -96,7 +96,7 @@ int	up_min_a(t_holder *holder)
 	return (count);
 }
 
-int	location_a(t_holder *holder, int *arr)
+int	locationA(t_holder *holder, int *arr)
 {
 	int			data;
 	t_struct	*keep_a;

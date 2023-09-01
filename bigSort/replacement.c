@@ -85,7 +85,7 @@ int	up_b(t_holder *holder, t_struct *use_b, int data)
 	return (size);
 }
 
-void	find_min_step(t_holder *holder, int *arr, t_struct *second_b)
+int	find_min_step(t_holder *holder, int *arr, t_struct *second_b)
 {
 	int	min_len;
 	int	step_len;
@@ -96,7 +96,7 @@ void	find_min_step(t_holder *holder, int *arr, t_struct *second_b)
 	{
 		step_len = 0;
 		step_len += up_b(holder, second_b, holder->b->data);
-		step_len += location_a(holder, arr);
+		step_len += locationA(holder, arr);
 		if (step_len <= min_len)
 		{
 			min_len = step_len;
@@ -105,9 +105,8 @@ void	find_min_step(t_holder *holder, int *arr, t_struct *second_b)
 		holder->b = holder->b->next;
 	}
 	holder->b = second_b;
-	ft_run_as(data, holder);
-	locate_a(holder, arr);
-	pa(holder);
+	
+	return (data);
 }
 
 void	replacement(t_holder *holder, int *arr)
@@ -116,12 +115,24 @@ void	replacement(t_holder *holder, int *arr)
 	t_struct	*second_b;
 
 	keep_b = holder->b;
+	int data;
+	int i = 0;
 	while (holder->size_b)
 	{
-		second_b = holder->b;
-		find_min_step(holder, arr, second_b);
+		i = 0;
+		while (i < holder->size_b)
+		{
+			second_b = holder->b;
+			data = find_min_step(holder, arr, second_b);
+			i++;
+		}
+
+		run_as(data, holder);
+		locateA(holder, arr);
+		pa(holder);
 	}
-	make_up_a(holder);
+	moveUpA(holder);
+	print_result(holder->a);
 	ft_free(&(holder->a));
 	free(holder);
 }

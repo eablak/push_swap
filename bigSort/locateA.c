@@ -36,7 +36,7 @@ void	ft_make_a(t_holder *holder, int count)
 	}
 }
 
-void	make_up_a(t_holder *holder)
+void	moveUpA(t_holder *holder)
 {
 	t_struct	*keep_a;
 	int			number;
@@ -86,12 +86,12 @@ void	ft_finish(t_holder *holder, int count)
 	}
 }
 
-void	locate_a(t_holder *holder, int *arr)
+void	locateA(t_holder *holder, int *arr)
 {
 	if (check_min(holder))
-		make_up_a(holder);
+		moveUpA(holder);
 	else if (check_max(holder))
-		make_up_a(holder);
+		moveUpA(holder);
 	else
-		locate_inter(holder, arr);
+		locateInter(holder, arr);
 }
