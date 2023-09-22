@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_sort_part2.c                                   :+:      :+:    :+:   */
+/*   replacement.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eablak <eablak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:44:07 by eablak            #+#    #+#             */
-/*   Updated: 2022/12/20 16:43:49 by eablak           ###   ########.fr       */
+/*   Updated: 2023/09/22 13:15:56 by eablak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	replacement(t_holder *holder, int *arr)
 			data = find_min_step(holder, arr, second_b);
 			i++;
 		}
-
+		mutual_rrs();
 		run_as(data, holder);
 		locateA(holder, arr);
 		pa(holder);

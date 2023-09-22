@@ -70,6 +70,7 @@ SRCS        :=      main.c \
                           start_sorting.c \
                           bigSort/sortedPart_process.c \
                           bigSort/replacement.c \
+                          bigSort/mutual_rrs.c \
                           
 OBJS        := $(SRCS:.c=.o)
 
