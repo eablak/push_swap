@@ -62,7 +62,7 @@ void	locateInter(t_holder *holder, int *arr)
 	ft_finish(holder, count);
 }
 
-void	ft_array_control(char *all_array)
+void	array_control(char *all_array)
 {
 	if (all_array == NULL)
 	{

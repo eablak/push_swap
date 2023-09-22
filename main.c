@@ -50,7 +50,7 @@ char	*unify(char **av)
 	while (av[i])
 	{
 		array = ft_split(av[i], ' ');
-		ft_array_control(array[0]);
+		array_control(array[0]);
 		j = 0;
 		while (array[j])
 		{

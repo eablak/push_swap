@@ -66,7 +66,7 @@ SRCS        :=      main.c \
                           bigSort/big_sort.c \
                           bigSort/moveUpB.c \
                           bigSort/locationA.c \
-                          quarted_quintette.c \
+                          quartet_quintette.c \
                           start_sorting.c \
                           bigSort/sortedPart_process.c \
                           bigSort/replacement.c \

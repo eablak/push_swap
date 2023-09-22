@@ -62,7 +62,7 @@ void	find_min_data(t_holder *holder)
 	send_b(holder, i);
 }
 
-void	quarted_quintette(t_struct **a, t_struct *b, int size)
+void	quartet_quintette(t_struct **a, t_struct *b, int size)
 {
 	t_holder	*holder;
 	t_struct	*keep_a;

@@ -71,7 +71,7 @@ void				process_by_size(int size, t_struct **my_struct);
 void				binary_sorting(t_struct **a);
 void				triple_sorting(t_struct **a, int flag);
 void				triple_utils(t_struct **a);
-void				quarted_quintette(t_struct **a, t_struct *b, int size);
+void				quartet_quintette(t_struct **a, t_struct *b, int size);
 void				big_sort(t_struct **a, t_struct *b, int size);
 void				find_min_data(t_holder *holder);
 int					*bubble_sort(int *numeros, int size);
@@ -107,7 +107,7 @@ void				find_sorted_max(t_strct_bigsort *big_strct);
 void				sorted_stayA(t_holder *holder, int i);
 sorted_struct			find_sorted(t_struct **a);
 void				ft_finish(t_holder *holder, int count);
-void				ft_array_control(char *all_array);
+void				array_control(char *all_array);
 
 void print_result(t_struct *holder_a);
 #endif

@@ -77,7 +77,7 @@ void	process_by_size(int size, t_struct **my_struct)
 	else if (size == 3)
 		triple_sorting(my_struct, 1);
 	else if (size == 4 || size == 5)
-		quarted_quintette(my_struct, b, size);
+		quartet_quintette(my_struct, b, size);
 	else if (size > 5)
 		big_sort(my_struct, b, size);
 	free(b);
